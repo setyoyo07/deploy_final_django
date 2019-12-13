@@ -1,0 +1,53 @@
+.footer {
+    border-top: 1px solid gray;
+}
+
+.footer1, .footer2, .footer3 {
+    padding: 20px 40px;
+    color: gray;
+}
+
+.footer1 ul, .footer2 ul {
+    margin: 0;
+    padding: 0;
+}
+
+.footer1 ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer1 ul li img {
+    color: gray;
+    margin-top: 10px;
+}
+
+.footer-title {
+    font-weight: bolder;
+}
+
+.footer2 ul li {
+    list-style: none;
+    margin: 15px 10px;
+}
+
+.footer-ads img, p{
+    display: inline;
+}
+
+.footer-shot {
+    margin-top: 20px;
+}
+
+.footer-shot p {
+    margin-left: 10px;
+}
+
+.footer-shot .num-shot {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+
+
