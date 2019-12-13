@@ -1,0 +1,33 @@
+{% extends 'dribble/base.html' %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block content %}
+<div class="inputs">
+        <div class="container">
+            <h1>Let's Post Your Design Here!</h1>
+            <form action="/inputpost" method="post">
+                {% csrf_token %}
+                <div class="inputs-form">
+                    <label for="img">Your Design</label>
+                    <input type="text" name="img" id="img"></br>
+                </div>
+                <div class="inputs-form">
+                    <label for="title">Title</label>
+                    <input type="text" name="title" id="title"></br>
+                </div>
+                <div class="inputs-form">
+                    <label for="content">Write Your Caption Here!</label><br>
+                    <textarea rows="10" cols="50" name="caption" id="content"></textarea></br>
+                </div>
+                <div class="inputs-form">
+                    <label for="category">Category</label>
+                    <input type="text" name="category" id="category"></br>
+                </div>
+                <div class="inputs-submit">
+                    <input type="submit" value="Publish">
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

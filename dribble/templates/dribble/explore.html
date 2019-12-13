@@ -1,0 +1,167 @@
+{% extends 'dribble/base.html' %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-light mb-0 p-0">
+        <div class="col-2 pl-5 justify-content-center">    
+            <div class="dropdown">
+                <button type="button" class="md_button dropdown-toggle btn-lg" data-toggle="dropdown">
+                    Popular
+                </button>
+                <div class="dropdown-menu md_drop">
+                    <a class="dropdown-item" href="#">Popular</a>
+                    <a class="dropdown-item" href="#">Teams</a>
+                    <a class="dropdown-item" href="#">Debuts</a>
+                    <a class="dropdown-item" href="#">Recent</a>
+                </div>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse col-8 md_kategori justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">All </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/explore/animation">Animation</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/explore/branding">Branding</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/explore/ilustration">Ilustration</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Mobile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Print</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Product Design</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Typograpy</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Web Design</a>
+            </li>
+                </ul>
+            </ul>
+        </div>
+        <div class="col-2 pr-5 d-flex justify-content-end align-items-center">
+            <button type="button" href="#" class="btn btn-outline-info" data-toggle="collapse" data-target="#demo">Filter</button>
+        </div>
+    </nav>
+    <div class="container-fluid collapse  md_collapse" id="demo" style="padding-left:7%;">
+        <div class="row">
+            <div class="col-3">
+                <div>
+                    <h5 style="padding-left: 20px;">TAGS</h5>
+                    <form class="navbar-form" role="search">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Tags" name="q">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-3">
+                    <div class="dropdown">
+                            <h5>TIMEFRAME</h5>
+                            <button type="button" class="md_button dropdown-toggle btn-lg" data-toggle="dropdown">
+                                Now
+                            </button>
+                            <div class="dropdown-menu md_drop">
+                                <a class="dropdown-item" href="#">Now</a>
+                                <a class="dropdown-item" href="#">This Past Week</a>
+                                <a class="dropdown-item" href="#">This Past Month</a>
+                                <a class="dropdown-item" href="#">This Past Year</a>
+                                <a class="dropdown-item" href="#">All Year</a>
+                            </div>
+                        </div>
+            </div>
+            <div class="col-3"><div class="dropdown">
+                    <h5>MADE WITH</h5>
+                    <button type="button" class="md_button dropdown-toggle btn-lg" data-toggle="dropdown">
+                        All apps
+                    </button>
+                    <div class="dropdown-menu md_drop">
+                        <a class="dropdown-item" href="#">Adobe XD</a>
+                        <a class="dropdown-item" href="#">Figma</a>
+                        <a class="dropdown-item" href="#">Sketch</a>
+                        <a class="dropdown-item" href="#">Unspash</a>
+                    </div>
+                </div></div>
+            <div class="col-3"><div class="dropdown">
+                    <h5>DOWNLOAD</h5>
+                    <button type="button" class="md_button dropdown-toggle btn-lg" data-toggle="dropdown">
+                        All Shots
+                    </button>
+                    <div class="dropdown-menu md_drop">
+                        <a class="dropdown-item" href="#">All Shots</a>
+                        <a class="dropdown-item" href="#">Adobe Illustrator</a>
+                        <a class="dropdown-item" href="#">Adobe Photoshop</a>
+                        <a class="dropdown-item" href="#">Adobe XD</a>
+                        <a class="dropdown-item" href="#">Figma</a>
+                        <a class="dropdown-item" href="#">Invision Studio</a>
+                        <a class="dropdown-item" href="#">Sketch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<div class="container-fluid content">
+    <div class="row">
+        {% for post in posts %}
+        <div class="col-md-4" id="content-col">
+            <div class="content-post">
+                {% if post.category == 'Animation' %}
+                <a href="" data-toggle="modal" data-target="#myModal">
+                <div class="embed-responsive embed-responsive-4by3">
+                    <iframe class="embed-responsive-item" src="{{post.img}}"></iframe>
+                </div>
+                </a>
+                {% else %}
+                <a href="" data-toggle="modal" data-target="#content"><img src="{{post.img}}" class="content-img" width="360px" height="270px"/></a> 
+                {% endif %}
+            </div>
+            <div class="modal fade" id=content role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <div class="col-md-2">
+                                <img src=""/>
+                            </div>
+                            <div class="col-md-6">
+                                <h3><a href="">{{post.nama}}</a></h3>
+                                <h5>by <a href="">Username</a></h5>
+                            </div>
+                            <div class="col-md-4">
+                            </div>      
+                        </div>
+                        <div class="modal-body">
+                            <div class="modals-img">
+                                <img src="{{post.img}}" width="760px"/>
+                            </div>
+                            <div class="modals-caption">
+                                <p>{{post.caption}}</p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default">Previous Post</button>
+                            <button type="button" class="btn btn-default">Next Post</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}                           
+    </div>        
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'dribble/base.html' %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid pl-5">
+    <div>
+        {% for designer in designers %}
+        <div class="row border-bottom align-items-center" >
+            <div class="col-md-3 mr-0">
+                <img src="{{designer.img}}" style="width: 200px; height: 200px;">
+                <h4>{{designer.username}}</h4>
+            </div>
+            {% for post in posts %}
+            {% if post.designer_id == designer.id %}
+            <div class="col-md-3 mr-0">
+                <div>
+                    {% if post.category == 'Animation' %}
+                    <a href="" data-toggle="modal" data-target="#myModal">
+                    <div class="embed-responsive embed-responsive-4by3">
+                        <iframe class="embed-responsive-item" src="{{post.img}}" style="width: 200px; height: 200px;"></iframe>
+                    </div>
+                    </a>
+                    {% else %}
+                    <a href="" data-toggle="modal" data-target="#content"><img src="{{post.img}}" class="content-img" width="200px" height="200px"/></a> 
+                    {% endif %}
+            {% endif %}
+            </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

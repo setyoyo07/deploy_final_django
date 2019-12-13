@@ -1,0 +1,14 @@
+.content {
+    background-color: #F4F4F4;
+    padding-top: 40px;
+}
+
+.content-post {
+    border: 10px solid white;
+    width: 380px;
+    margin-bottom: 30px;
+}
+
+#content-col {
+    padding-left: 25px;
+}
