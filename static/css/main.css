@@ -12,13 +12,3 @@
 #content-col {
     padding-left: 25px;
 }
-
-.account-info li {
-    display: inline;
-    color: black;
-    margin: 10px;
-}
-
-.account-info li span {
-    color: gray;
-}

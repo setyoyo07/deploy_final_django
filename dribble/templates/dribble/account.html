@@ -3,7 +3,7 @@
 {% block title %}Homepage{% endblock %}
 
 {% block content %}
-    <div class="container-fluid">
+    <div class="container-fluid account-info">
         <div class="row">
             <ul>
                 <li>
@@ -50,7 +50,7 @@
                             </div>
                             </a>
                             {% else %}
-                            <a href="" data-toggle="modal" data-target="#content"><img src="{{post.img}}" class="content-img" width="360px" height="270px"/></a> 
+                            <a href="" data-toggle="modal" data-target="#content"><img src="{{post.img}}" class="content-img" width="360px" height="270px"/></a>
                             {% endif %}
                         </div>
                         <div class="modal fade" id=content role="dialog">
@@ -66,7 +66,7 @@
                                             <h5>by <a href="">Username</a></h5>
                                         </div>
                                         <div class="col-md-4">
-                                        </div>      
+                                        </div>
                                     </div>
                                     <div class="modal-body">
                                         <div class="modals-img">
@@ -84,7 +84,7 @@
                             </div>
                         </div>
                     </div>
-            {% endfor %}                          
+            {% endfor %}
         </div>
     </div>
 
